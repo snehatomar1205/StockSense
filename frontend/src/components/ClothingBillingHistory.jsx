@@ -7,7 +7,7 @@ const ClothingBillingHistory = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/api/clothing-billing/all", { withCredentials: true })
+      .get("https://stocksense-lvxp.onrender.com/api/clothing-billing/all", { withCredentials: true })
       .then((res) => setLogs(res.data));
   }, []);
 
