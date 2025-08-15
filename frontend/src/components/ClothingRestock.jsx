@@ -10,7 +10,7 @@ const ClothingRestock = ({ onRestock }) => {
 
   const handleSubmit = async () => {
     await axios.post(
-      "http://localhost:5000/api/clothing/add",
+      "https://stocksense-lvxp.onrender.com/api/clothing/add",
       {
         name,
         quantity: { value, unit },
