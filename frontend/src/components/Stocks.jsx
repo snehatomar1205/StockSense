@@ -17,21 +17,21 @@ const Stocks = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/stocks")
+    fetch("https://stocksense-lvxp.onrender.com/stocks")
       .then(res => res.json())
       .then(data => setStocks(data))
       .catch(err => console.error("Failed to fetch stocks", err));
   }, []);
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/stocks/recommendations")
+    fetch("https://stocksense-lvxp.onrender.com/api/stocks/recommendations")
       .then(res => res.json())
       .then(data => setRecommendations(data))
       .catch(err => console.error("Failed to fetch recommendations", err));
   }, []);
 
   const fetchStocks = () => {
-    fetch("http://localhost:5000/api/stocks")
+    fetch("https://stocksense-lvxp.onrender.com/api/stocks")
       .then(res => res.json())
       .then(data => setStocks(data))
       .catch(err => console.error("Failed to fetch stocks", err));
@@ -48,7 +48,7 @@ const Stocks = () => {
   }
 
     try {
-      await fetch(`http://localhost:5000/api/stocks/${id}/add`, {
+      await fetch(`https://stocksense-lvxp.onrender.com/api/stocks/${id}/add`, {
         method: 'PATCH',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ amount: parsedAmount }),
@@ -70,7 +70,7 @@ const Stocks = () => {
   }
 
   try {
-    const response = await fetch(`http://localhost:5000/api/stocks/${id}/remove`, {
+    const response = await fetch(`https://stocksense-lvxp.onrender.com/api/stocks/${id}/remove`, {
       method: 'PATCH',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ amount: parsedAmount }),
@@ -93,7 +93,7 @@ const Stocks = () => {
     if (!window.confirm("Are you sure you want to delete this item?")) return;
 
     try {
-      await fetch(`http://localhost:5000/api/stocks/${id}`, { method: 'DELETE' });
+      await fetch(`https://stocksense-lvxp.onrender.com/api/stocks/${id}`, { method: 'DELETE' });
       fetchStocks();
     } catch {
       alert("Error deleting stock");
