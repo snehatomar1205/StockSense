@@ -11,13 +11,13 @@ const Billing = () => {
   const [billingHistory, setBillingHistory] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/stocks")
+    fetch("https://stocksense-lvxp.onrender.com/api/stocks")
       .then(res => res.json())
       .then(data => setStocks(data));
   }, []);
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/billing/history")
+    fetch("https://stocksense-lvxp.onrender.com/api/billing/history")
       .then(res => res.json())
       .then(data => setBillingHistory(data));
   }, []);
@@ -48,13 +48,13 @@ const Billing = () => {
 
     try {
       for (const item of billItems) {
-        await fetch(`http://localhost:5000/api/stocks/${item.id}/remove`, {
+        await fetch(`https://stocksense-lvxp.onrender.com/api/stocks/${item.id}/remove`, {
           method: 'PATCH',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ amount: item.quantity }),
         });
 
-        await fetch("http://localhost:5000/api/billing", {
+        await fetch("https://stocksense-lvxp.onrender.com/api/billing", {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
@@ -68,7 +68,7 @@ const Billing = () => {
 
       alert("Billing successful and stock updated");
       setBillItems([]);
-      const res = await fetch("http://localhost:5000/api/billing/history");
+      const res = await fetch("https://stocksense-lvxp.onrender.com/api/billing/history");
       const updatedHistory = await res.json();
       setBillingHistory(updatedHistory);
     } catch (err) {
