@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API = axios.create({ baseURL: 'http://localhost:5000/api/clothing', withCredentials: true });
+const API = axios.create({ baseURL: 'https://stocksense-lvxp.onrender.com/api/clothing', withCredentials: true });
 
 export const fetchClothing = () => API.get('/all');
 export const addClothing = (data) => API.post('/add', data);
