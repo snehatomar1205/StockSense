@@ -17,7 +17,7 @@ const app = express();
 
 // CORS
 app.use(cors({
-  origin: ['http://localhost:5173', 'https://stocksense-lvxp.onrender.com'],
+  origin: '*',
   credentials: true
 }));
 
