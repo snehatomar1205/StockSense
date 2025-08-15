@@ -15,7 +15,7 @@ const ClothingSalesGraph = () => {
 
   useEffect(() => {
   axios
-    .get('http://localhost:5000/api/clothing-billing/sales-data', {
+    .get('https://stocksense-lvxp.onrender.com/api/clothing-billing/sales-data', {
       withCredentials: true,
     })
     .then((res) => {
