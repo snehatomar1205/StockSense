@@ -7,7 +7,7 @@ const ClothingNotifications = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/api/clothing/notifications", { withCredentials: true })
+      .get("https://stocksense-lvxp.onrender.com/api/clothing/notifications", { withCredentials: true })
       .then((res) => setAlerts(res.data));
   }, []);
 
