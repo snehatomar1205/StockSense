@@ -11,7 +11,7 @@ const SalesGraph = () => {
   const [salesData, setSalesData] = useState({ labels: [], totals: [] });
 
   useEffect(() => {
-    fetch('http://localhost:5000/api/billing/history')
+    fetch('https://stocksense-lvxp.onrender.com/api/billing/history')
       .then(async res => {
         console.log('Billing status:', res.status);
         const json = await res.json();
