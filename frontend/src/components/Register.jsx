@@ -11,7 +11,7 @@ const Register = () => {
   const handleRegister = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("http://localhost:5000/api/auth/register", { email, password });
+      const res = await axios.post("https://stocksense-lvxp.onrender.com/api/auth/register", { email, password });
       if (res.status === 201 || res.status === 200) {
         navigate('/login');
       }
