@@ -5,7 +5,7 @@ const Notifications = () => {
   const [notifications, setNotifications] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:5000/api/notifications')
+    fetch('https://stocksense-lvxp.onrender.com/api/notifications')
       .then(res => res.json())
       .then(data => setNotifications(data.notifications || []))
       .catch(err => console.error('Error fetching notifications:', err));
