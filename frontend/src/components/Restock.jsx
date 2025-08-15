@@ -42,7 +42,7 @@ const Restock = () => {
   const handleConfirmRestock = async () => {
 
     try {
-      const response = await fetch("http://localhost:5000/api/stocks/restock", {
+      const response = await fetch("https://stocksense-lvxp.onrender.com/api/stocks/restock", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(items)
