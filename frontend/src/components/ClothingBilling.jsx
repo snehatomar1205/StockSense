@@ -11,11 +11,11 @@ const ClothingBilling = ({ items, onBill }) => {
     const newQty = item.quantity.value - Number(qty);
     if (newQty < 0) return alert("Not enough stock");
 
-    await axios.patch(`http://localhost:5000/api/clothing/update/${selected}`, {
+    await axios.patch(`https://stocksense-lvxp.onrender.com/api/clothing/update/${selected}`, {
       quantity: { value: newQty, unit: item.quantity.unit }
     }, { withCredentials: true });
 
-    await axios.post("http://localhost:5000/api/clothing-billing/log", {
+    await axios.post("https://stocksense-lvxp.onrender.com/api/clothing-billing/log", {
       itemId: item._id,
       itemName: item.name,
       quantityBilled: Number(qty),
