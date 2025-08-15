@@ -17,7 +17,7 @@ const Stocks = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch("https://stocksense-lvxp.onrender.com/stocks")
+    fetch("https://stocksense-lvxp.onrender.com/api/stocks")
       .then(res => res.json())
       .then(data => setStocks(data))
       .catch(err => console.error("Failed to fetch stocks", err));
