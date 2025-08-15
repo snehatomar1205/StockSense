@@ -17,7 +17,7 @@ const app = express();
 
 // CORS
 app.use(cors({
-  origin: '*',
+  origin: "https://stock-sense-lac.vercel.app",
   credentials: true
 }));
 
