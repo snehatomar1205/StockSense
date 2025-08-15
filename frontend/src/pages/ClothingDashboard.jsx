@@ -13,7 +13,7 @@ const ClothingDashboard = () => {
   const [showInventory, setShowInventory] = useState(false);
 
   const fetchItems = async () => {
-    const res = await axios.get("http://localhost:5000/api/clothing/all", {
+    const res = await axios.get("https://stocksense-lvxp.onrender.com/api/clothing/all", {
       withCredentials: true,
     });
     setItems(res.data);
