@@ -48,6 +48,9 @@ cron.schedule('0 9 * * *', async () => {
   checkFestivalNotifications();
 });
 
+app.get("/", (req, res) => {
+  res.json({ status: "server working!" });
+});
 // Start server
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, async () => {
